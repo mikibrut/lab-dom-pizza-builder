@@ -63,23 +63,21 @@ function renderGreenPeppers() {
 }
 
 function renderWhiteSauce() {
-  document.querySelectorAll('.sauce').forEach((oneSauce) => {
-    if (state.whiteSauce) {
-      oneSauce.style.visibility = 'visible';
-    } else {
-      oneSauce.style.visibility = 'hidden';
-    }
-  });
+  const elementSauce = document.querySelector('.sauce')
+  if (state.whiteSauce) {
+    elementSauce.classList.add('sauce-white');
+  } else {
+    elementSauce.classList.remove('sauce-white');
+  }
 }
 
 function renderGlutenFreeCrust() {
-  document.querySelectorAll('.crust').forEach((oneCrust) => {
-    if (state.glutenFreeCrust) {
-      oneCrust.style.visibility = 'visible';
-    } else {
-      oneCrust.style.visibility = 'hidden';
-    }
-  });
+  const elementCrust = document.querySelector('.crust')
+  if (state.glutenFreeCrust) {
+    elementCrust.classList.add('crust-gluten-free');
+  } else {
+    elementCrust.classList.remove('crust-gluten-free');
+  }
 }
 
 function renderButtons() {
